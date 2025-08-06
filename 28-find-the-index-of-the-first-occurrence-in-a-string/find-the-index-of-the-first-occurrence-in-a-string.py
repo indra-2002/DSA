@@ -11,7 +11,7 @@ class Solution(object):
         while a<len(haystack):
             if haystack[a:a+b]==needle:
                 return a
-                break
+               
             else:
                 a+=1
         return -1
