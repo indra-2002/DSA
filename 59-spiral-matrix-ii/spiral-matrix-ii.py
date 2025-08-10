@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: List[List[int]]
         """
         r=[[0] * n for _ in range(n)]
-        num=1
+        num=1 
         left=0
         right=n-1
         top=0
