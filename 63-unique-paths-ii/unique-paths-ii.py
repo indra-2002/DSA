@@ -6,7 +6,7 @@ class Solution(object):
         """
         m,n=len(obstacleGrid),len(obstacleGrid[0])
         
-        if obstacleGrid[0][0]==1 or  obstacleGrid[m-1][n-1]:
+        if obstacleGrid[0][0]==1 or  obstacleGrid[m-1][n-1]==1:
             return 0
         board=[[0]*n for _ in range(m)]
         board[0][0]=1
