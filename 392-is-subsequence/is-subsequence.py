@@ -9,8 +9,7 @@ class Solution(object):
         m=len(s)
         if s== "":
             return True
-        if len(s)> len(t):
-            return False
+       
         for i in range(len(t)):
             if t[i]== s[r]:
                 m-=1
