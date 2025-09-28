@@ -9,7 +9,7 @@ class Solution(object):
         import heapq
         heap=[]
         res=[]
-        for i in range(min(len(nums1),k)):
+        for i in range(len(nums1)):
             
             heapq.heappush(heap,(nums1[i]+ nums2[0],i,0) )
         while heap and len(res)<k:
