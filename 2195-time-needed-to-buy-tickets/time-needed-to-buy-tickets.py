@@ -9,7 +9,7 @@ class Solution:
             index,ticket=q.popleft()
             ticket -= 1
             time += 1
-            if  ticket > 0:
+            if  ticket != 0:
                 q.append((index,ticket))
             if index==k and ticket==0:
                 return time
