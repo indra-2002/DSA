@@ -13,7 +13,7 @@ class Solution:
             if maxheap:
                 popped=1+heapq.heappop(maxheap)
                 if popped:
-                    q.append([popped,time+n])
+                    q.append((popped,time+n))
             if q and q[0][1]==time:
                 heapq.heappush(maxheap, q.popleft()[0])
         return time 
