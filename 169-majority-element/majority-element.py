@@ -12,7 +12,6 @@ class Solution:
             else:
                 count-=1
                 
-            if count==0:
-                value=nums[i]
+            
         return value
                 
