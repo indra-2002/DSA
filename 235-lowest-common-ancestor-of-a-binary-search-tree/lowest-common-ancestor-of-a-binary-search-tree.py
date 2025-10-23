@@ -13,8 +13,6 @@ class Solution:
             return self.lowestCommonAncestor(root.left,p,q)
         elif root.val < p.val and root.val <q.val:
             return self.lowestCommonAncestor(root.right,p,q)
-        elif root.val == p.val or root.val ==q.val:
+        else:
             return root
-        elif root.val > p.val and root.val < q.val :
-            return root
-        return root
+        
