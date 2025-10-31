@@ -1,30 +1,24 @@
 class Solution:
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
         
-        from collections import defaultdict
+        from collections import defaultdict,deque
         graph=defaultdict(list)
+        indegree=[0]*numCourses
         for i,j in prerequisites:
             graph[j].append(i)
-        v=[0]*numCourses
-        path=[0]*numCourses
-        stack=[]
-        def dfs(node):
-            v[node]=1
-            path[node]=1
-            for neigh in graph[node]:
-                if v[neigh]==0:
-                    if not dfs(neigh):
-                        return False
-                elif path[neigh]==1:
-                    return False
-            path[node]=0
-        
-            stack.append(node)
-            return True
-
-
+            indegree[i]+=1
+        q=deque()
         for i in range(numCourses):
-            if v[i]==0:
-                if not dfs(i):
-                    return []
-        return stack[::-1]
+            if indegree[i]==0:
+                q.append(i)
+        res=[]
+        while q:
+            node=q.popleft()
+            res.append(node)
+            for neig in graph[node]:
+                indegree[neig]-=1
+                if indegree[neig]==0:
+                    q.append(neig)
+        return res if len(res)==numCourses else []
+
+        
