@@ -12,7 +12,6 @@ class Solution:
         visited=set()
         while q:
             word, steps = q.popleft()
-            
             if word== endWord:
                 return steps
             for i in range(len(word)):               
@@ -21,5 +20,5 @@ class Solution:
                     if neigh not in visited:
                         q.append((neigh,steps+1))
                         visited.add(neigh)
-                pattern_map[pattern ]=[]
+                
         return 0
