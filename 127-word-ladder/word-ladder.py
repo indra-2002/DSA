@@ -20,5 +20,5 @@ class Solution:
                     if neigh not in visited:
                         q.append((neigh,steps+1))
                         visited.add(neigh)
-                
+                pattern_map[pattern ]=[]
         return 0
