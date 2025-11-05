@@ -22,7 +22,6 @@ class Solution:
                 
                 if dis[neigh] > distance+ wiegh:
                     dis[neigh]=distance + wiegh
-                    
                     ways[neigh]=ways[node]
                     heapq.heappush(q,(dis[neigh],neigh))
                 elif distance+ wiegh == dis[neigh]:
