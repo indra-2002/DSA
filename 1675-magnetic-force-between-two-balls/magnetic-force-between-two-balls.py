@@ -13,7 +13,7 @@ class Solution:
                 return False
         position.sort()
         l=1
-        h=max(position)
+        h=position[-1]-position[0]
         while l<=h:
             mid=(l+h)//2
             if possible(position,mid):
