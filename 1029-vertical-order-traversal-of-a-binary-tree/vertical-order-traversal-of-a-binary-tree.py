@@ -9,18 +9,19 @@ class Solution:
     def verticalTraversal(self, root: Optional[TreeNode]) -> List[List[int]]:
         if not root:
             return []
-        nodes=[]
+        from collections import defaultdict,deque
         q=deque()
         q.append((root,0,0))
+        nodes=[]
         while q:
-            node,row , col=q.popleft()
+            node,row,col=q.popleft()
             nodes.append((col,row,node.val))
             if node.left:
-                q.append((node.left,row+1, col-1))
+                q.append((node.left,row+1,col-1))
             if node.right:
-                q.append((node.right, row+1, col+1))
+                q.append((node.right,row+1,col+1))
         nodes.sort()
         res=defaultdict(list)
-        for col , row , val in nodes:
-            res[col].append(val)
+        for i,j,k in nodes:
+            res[i].append(k)
         return [res[x] for x in sorted(res)]
