@@ -11,7 +11,8 @@ class Solution:
             distance, row, col = heapq.heappop(minq)
             if row== rows-1 and col == cols-1:
                 return distance
-            
+            if distance> dis[row][col]:
+                continue
             for i,j in [(1,0),(-1,0),(0,1),(0,-1)]:
                 nr, nc= row+i, col + j
                 if 0<= nr < rows and 0<= nc < cols:
